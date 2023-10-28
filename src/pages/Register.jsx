@@ -29,7 +29,7 @@ export default function Register() {
                     }
                    else {
                         const fpPromise = FingerprintJS.load({
-                            apiKey: "NOX3LSmkVaErLEQPkilK",
+                            apiKey: import.meta.env.VITE_FPJS_API,
                             region: "eu"
                         });
 

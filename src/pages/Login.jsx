@@ -29,7 +29,7 @@ export default function Login() {
         }
          else {
           const fpPromise = FingerprintJS.load({
-              apiKey: "NOX3LSmkVaErLEQPkilK",
+              apiKey: import.meta.env.VITE_FPJS_API,
               region: "eu"
           });
 
@@ -124,17 +124,6 @@ export default function Login() {
         }
   }
 
-  // const botDetection = async (e) => {
-  //   const fpPromise = FingerprintJS.load({
-  //     apiKey: "NOX3LSmkVaErLEQPkilK",
-  //     region: "eu"
-  // });
-
-  // const fp = await fpPromise;
-  // const botDetection = await fp.get({products: ['botd']}) 
-  // console.log(botDetection);
-  // }
-
 
   
 
@@ -154,9 +143,9 @@ export default function Login() {
             <input type="password" className="form-control" id="exampleInputPassword1" placeholder="*******"
               value={userData.password} onChange={(e) => setUserData({ ...userData, password: e.target.value })} autoComplete='off'/>
           </div>
-          {/* <div className="container-login100-form-btn m-t-17">
+          <div className="container-login100-form-btn m-t-17">
             <button className="login100-form-btn">Sign In</button>
-          </div> */}
+          </div>
 
     </form>
   </div>
@@ -168,10 +157,6 @@ export default function Login() {
                   If you've been on the login page before, based on your visitorID, you will not need to verify yourself again.
                 </p>
         </div>
-        <div className="container-login100-form-btn m-t-17">
-            <button className="login100-form-btn" onClick={botDetection}>Testing</button>
-          </div>
-
       </div>
     </>
     
