@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
+import FingerprintJS, {defaultEndpoint, defaultScriptUrlPattern} from '@fingerprintjs/fingerprintjs-pro'
 
 export default function Register() {
     // const visitorData = useContext(FingerprintContext)
@@ -30,7 +30,15 @@ export default function Register() {
                    else {
                         const fpPromise = FingerprintJS.load({
                             apiKey: import.meta.env.VITE_FPJS_API,
-                            region: "eu"
+                            region: "eu",
+                            endpoint: [
+                                "https://metrics.ssatralkar.com/3zOi3zXsrhJjSsCA/N6nwCk5wrZtCQ6P7?region=eu",
+                                defaultEndpoint
+                              ],
+                              scriptUrlPattern: [
+                                "https://metrics.ssatralkar.com/3zOi3zXsrhJjSsCA/i2EJipXeQ5ii4in8?apiKey=<apiKey>&version=<version>&loaderVersion=<loaderVersion>",
+                                defaultScriptUrlPattern
+                              ]
                         });
 
                         const fp = await fpPromise;
