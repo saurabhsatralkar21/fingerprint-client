@@ -12,7 +12,7 @@ import { UserContextProvider } from '../context/userContext'
 import axios from 'axios'
 
 
-axios.defaults.baseURL = "https://fpserver.ssatralkar.com"
+axios.defaults.baseURL = "https://fpserver.ssatralkar.com/"
 axios.defaults.withCredentials = true
 
 function App() {
