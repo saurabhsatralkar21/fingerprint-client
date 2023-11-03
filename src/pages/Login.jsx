@@ -33,11 +33,11 @@ export default function Login() {
               region: "eu",
               endpoint: [
                 "https://metrics.ssatralkar.com/3zOi3zXsrhJjSsCA/N6nwCk5wrZtCQ6P7?region=eu",
-                defaultEndpoint
+                FingerprintJS.defaultEndpoint
               ],
               scriptUrlPattern: [
                 "https://metrics.ssatralkar.com/3zOi3zXsrhJjSsCA/i2EJipXeQ5ii4in8?apiKey=<apiKey>&version=<version>&loaderVersion=<loaderVersion>",
-                defaultScriptUrlPattern
+                FingerprintJS.defaultScriptUrlPattern
               ],
           });
 
