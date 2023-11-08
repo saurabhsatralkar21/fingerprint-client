@@ -87,17 +87,15 @@ export default function Login() {
 
 
             if(response.data.warning) {
-              setTimeout(()=>{
+              // setTimeout(()=>{
                   console.log(response.data.warning);
                   toast.loading("2FA not configured\nRedirecting to configure 2FA")
-                  setTimeout(()=>{
+    
                     const accessToken = response.data.accessToken
                     const refreshToken = response.data.refreshToken
                     localStorage.setItem('accessToken', JSON.stringify({ accessToken , expirationTime }))
                     localStorage.setItem('refreshToken', JSON.stringify({ refreshToken, expirationTime }))
-                    navigate('/mfa')
-                  },2000)                
-                },3000)
+                    setTimeout(()=>{navigate('/mfa')}, 2000)
               }
 
             if(response.data.success){
